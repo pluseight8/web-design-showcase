@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no,email=no,address=no">
+  <meta name="theme-color" content="#141612">
+  <meta name="description" content="Междутакт — вымышленная студия движения. Посмотрите расписание занятий по мобильности, силе и растяжке.">
+  <link rel="icon" href="assets/mark.png" type="image/png">
+  <link rel="stylesheet" href="studio.css">
+  <script src="schedule.js" defer></script>
+  <title>Междутакт — студия движения</title>
+</head>
+<body>
+  <a class="skip" href="#main">К содержанию</a>
+  <header class="site-header" id="top">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Междутакт, к началу страницы"><span class="brand-mark" aria-hidden="true"></span>Междутакт</a>
+      <nav class="header-links" aria-label="Навигация">
+        <a class="section-link" href="#schedule">Расписание</a>
+        <a class="section-link" href="#formats">Форматы</a>
+        <a class="portfolio-link" href="../index.html#works"><span aria-hidden="true">←</span> К портфолио</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="hero-content">
+          <p class="demo-mark"><span aria-hidden="true"></span>Вымышленный бренд</p>
+          <h1 id="hero-title">Движение<br>в своём<br><em>ритме.</em></h1>
+          <p class="hero-intro">У нас можно поработать над подвижностью, добавить силовую нагрузку или спокойно потянуться после рабочего дня.</p>
+          <a class="primary-link" href="#schedule">Смотреть расписание <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <figure class="hero-image">
+        <img src="assets/hero.webp" width="1500" height="1000" alt="Спортсменка в боковом выпаде на тренировке" fetchpriority="high">
+      </figure>
+    </section>
+
+    <section class="schedule" id="schedule" tabindex="-1" aria-labelledby="schedule-title">
+      <div class="shell">
+        <header class="section-heading" data-in-view>
+          <h2 id="schedule-title">Расписание</h2>
+          <p>Выберите день и формат. Длительность занятия указана рядом со временем.</p>
+        </header>
+
+        <div class="planner" hidden>
+          <div class="planner-main">
+            <fieldset class="day-field">
+              <legend class="sr-only">День недели</legend>
+              <div class="day-options">
+                <label><input type="radio" name="day" value="0" checked><span aria-hidden="true">Пн</span><span class="sr-only">Понедельник</span></label>
+                <label><input type="radio" name="day" value="1"><span aria-hidden="true">Вт</span><span class="sr-only">Вторник</span></label>
+                <label><input type="radio" name="day" value="2"><span aria-hidden="true">Ср</span><span class="sr-only">Среда</span></label>
+                <label><input type="radio" name="day" value="3"><span aria-hidden="true">Чт</span><span class="sr-only">Четверг</span></label>
+                <label><input type="radio" name="day" value="4"><span aria-hidden="true">Пт</span><span class="sr-only">Пятница</span></label>
+                <label><input type="radio" name="day" value="5"><span aria-hidden="true">Сб</span><span class="sr-only">Суббота</span></label>
+                <label><input type="radio" name="day" value="6"><span aria-hidden="true">Вс</span><span class="sr-only">Воскресенье</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="format-field">
+              <legend class="sr-only">Формат занятия</legend>
+              <div class="format-options">
+                <label><input type="radio" name="format" value="all" aria-label="Все форматы" checked><span>Все</span></label>
+                <label><input type="radio" name="format" value="mobility"><span>Мобильность</span></label>
+                <label><input type="radio" name="format" value="strength"><span>Сила</span></label>
+                <label><input type="radio" name="format" value="stretch"><span>Растяжка</span></label>
+              </div>
+            </fieldset>
+
+            <p class="schedule-day" id="schedule-day" aria-live="polite"></p>
+            <ul class="sessions" id="sessions" aria-label="Занятия"></ul>
+            <p class="empty-message" id="empty-message" hidden>На этот день занятий в таком формате нет. Выберите другой день или покажите все форматы.</p>
+          </div>
+
+          <aside class="selection" aria-labelledby="selection-title">
+            <h3 id="selection-title">Ваш выбор</h3>
+            <p class="selection-message" id="selection-message" role="status" aria-atomic="true">Выберите занятие в расписании. Здесь появятся формат, день и время.</p>
+            <button class="clear-choice" id="clear-choice" type="button" hidden>Сбросить выбор</button>
+            <p class="selection-note">Это демонстрационное расписание. Выбор действует до закрытия или обновления страницы.</p>
+          </aside>
+        </div>
+        <template id="session-template">
+          <li class="session">
+            <div class="session-time"><time></time><small></small></div>
+            <div class="session-info"><h3></h3><p></p></div>
+            <button class="choose" type="button" aria-pressed="false"></button>
+          </li>
+        </template>
+        <noscript><p class="empty-message">Пример на понедельник · 08:00 — мобильность, 12:30 — растяжка, 19:15 — сила. Переключение дней доступно при включённом JavaScript.</p></noscript>
+      </div>
+    </section>
+
+    <section class="formats" id="formats" aria-labelledby="formats-title">
+      <div class="shell formats-inner">
+        <figure class="formats-image" data-in-view>
+          <img src="assets/detail.webp" width="1200" height="800" alt="Спортсмен завязывает шнурки на кроссовке перед тренировкой" loading="lazy">
+        </figure>
+        <div class="formats-copy" data-in-view>
+          <h2 id="formats-title">Как мы<br>тренируемся</h2>
+          <dl class="format-list">
+            <div><dt><a href="#schedule" data-shortcut="mobility">Мобильность <span aria-hidden="true">↗</span></a></dt><dd>Работаем с амплитудой движений и учимся управлять ею.</dd></div>
+            <div><dt><a href="#schedule" data-shortcut="strength">Сила <span aria-hidden="true">↗</span></a></dt><dd>Разбираем базовые движения. Подбираем нагрузку по самочувствию.</dd></div>
+            <div><dt><a href="#schedule" data-shortcut="stretch">Растяжка <span aria-hidden="true">↗</span></a></dt><dd>Осваиваем растяжку постепенно и даём себе время в каждом положении.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div>
+        <p class="brand footer-brand"><span class="brand-mark" aria-hidden="true"></span>Междутакт</p>
+        <p class="footer-note">Вымышленная студия движения</p>
+      </div>
+      <div class="contacts" aria-label="Демонстрационные контакты">
+        <p>+7 (000) 000-02-02</p>
+        <p>hello@mezhdutakt.example</p>
+      </div>
+      <a class="portfolio-link footer-portfolio" href="../index.html#works"><span aria-hidden="true">←</span> К портфолио</a>
+      <details class="image-credit">
+        <summary>Об изображениях</summary>
+        <p>Оба кадра созданы для этого проекта в OpenAI ImageGen.</p>
+      </details>
+    </div>
+  </footer>
+</body>
+</html>

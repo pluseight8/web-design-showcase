@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f6f3e9">
+  <meta name="description" content="Портфолио веб-дизайна. Три самостоятельных интерактивных сайта для вымышленных брендов в гастрономии, фитнесе и архитектуре.">
+  <title>Первый взгляд · Портфолио веб-дизайна</title>
+  <link rel="icon" href="assets/mark.png" type="image/png">
+  <link rel="preload" href="assets/fonts/oranienbaum-cyr.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="portfolio.css">
+  <script defer src="portfolio.js"></script>
+</head>
+<body id="top">
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip" href="#main">К содержанию</a>
+  <header class="masthead">
+    <div class="container masthead-inner">
+      <a href="#top" class="identity">
+        <span class="identity-mark" aria-hidden="true"></span>
+        <span>Первый взгляд</span>
+      </a>
+      <nav aria-label="Навигация по портфолио">
+        <a href="#works">Работы</a>
+        <a href="#about">О коллекции</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <section class="hero container" aria-labelledby="title">
+      <div class="intro">
+        <p class="hero-label">Портфолио веб-дизайна</p>
+        <h1 id="title"><span>С первого</span> <span>взгляда.</span></h1>
+        <p class="intro-text">Три самостоятельных сайта для вымышленных брендов. У каждого свой стиль и свой сценарий для посетителя.</p>
+        <a class="primary" href="#works">Смотреть работы <span class="arrow down" aria-hidden="true"></span></a>
+      </div>
+      <div class="cover-gallery" aria-label="Демосайты">
+        <a class="cover cover--food" href="tihosol/index.html" data-project="tihosol">
+          <img src="tihosol/assets/cover.webp" alt="" width="960" height="610" fetchpriority="high">
+          <span>Тихосоль</span>
+        </a>
+        <a class="cover cover--movement" href="mezhdutakt/index.html" data-project="mezhdutakt">
+          <img src="mezhdutakt/assets/cover.webp" alt="" width="1080" height="720" fetchpriority="high">
+          <span>Междутакт</span>
+        </a>
+        <a class="cover cover--architecture" href="sloevi/index.html" data-project="sloevi">
+          <img src="sloevi/assets/cover.webp" alt="" width="1120" height="747" fetchpriority="high">
+          <span>Слоеви</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="works" id="works" aria-labelledby="works-title">
+      <div class="container">
+        <h2 id="works-title">Открыть и попробовать</h2>
+        <div class="project-list">
+          <article data-reveal class="project project--food">
+            <a class="project-link" href="tihosol/index.html">
+              <div class="project-media">
+                <img src="assets/tihosol-screen.webp" width="1152" height="720" alt="Первый экран демосайта ресторана «Тихосоль»" loading="lazy" decoding="async">
+              </div>
+              <div class="project-copy">
+                <p>Авторский ресторан</p>
+                <h3>Тихосоль</h3>
+                <p>Посмотрите меню по разделам и попробуйте выбрать столик на вечер.</p>
+                <span class="project-action">Открыть сайт <span class="arrow diagonal" aria-hidden="true"></span></span>
+              </div>
+            </a>
+          </article>
+          <article data-reveal class="project project--movement">
+            <a class="project-link" href="mezhdutakt/index.html">
+              <div class="project-media">
+                <img src="assets/mezhdutakt-screen.webp" width="1152" height="720" alt="Первый экран демосайта студии движения «Междутакт»" loading="lazy" decoding="async">
+              </div>
+              <div class="project-copy">
+                <p>Студия движения</p>
+                <h3>Междутакт</h3>
+                <p>Откройте расписание, выберите день и найдите подходящее занятие.</p>
+                <span class="project-action">Открыть сайт <span class="arrow diagonal" aria-hidden="true"></span></span>
+              </div>
+            </a>
+          </article>
+          <article data-reveal class="project project--architecture">
+            <a class="project-link" href="sloevi/index.html">
+              <div class="project-media">
+                <img src="assets/sloevi-screen.webp" width="1152" height="720" alt="Первый экран демосайта архитектурного бюро «Слоеви»" loading="lazy" decoding="async">
+              </div>
+              <div class="project-copy">
+                <p>Архитектурное бюро</p>
+                <h3>Слоеви</h3>
+                <p>Сравните проекты и посмотрите, как устроен каждый архитектурный кейс.</p>
+                <span class="project-action">Открыть сайт <span class="arrow diagonal" aria-hidden="true"></span></span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="container about-inner" data-reveal>
+        <h2 id="about-title">О коллекции</h2>
+        <p>Это демонстрационные проекты. Названия, услуги, телефоны и почта вымышлены. Интерактивные сценарии работают в браузере без отправки данных.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#top" class="identity"><span class="identity-mark" aria-hidden="true"></span>Первый взгляд</a>
+      <a href="#top" class="to-top">Наверх <span class="arrow up" aria-hidden="true"></span></a>
+    </div>
+  </footer>
+</body>
+</html>
