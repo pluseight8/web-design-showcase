@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#f6f3e9">
-  <meta name="description" content="Портфолио веб-дизайна. Три самостоятельных интерактивных сайта для вымышленных брендов в гастрономии, фитнесе и архитектуре.">
+  <meta name="description" content="Портфолио веб-дизайна. Шесть самостоятельных интерактивных сайтов для вымышленных брендов в гастрономии, архитектуре, культуре и технологиях.">
   <title>Первый взгляд · Портфолио веб-дизайна</title>
   <link rel="icon" href="assets/mark.png" type="image/png">
   <link rel="preload" href="assets/fonts/oranienbaum-cyr.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="portfolio.css">
+  <link rel="stylesheet" href="portfolio.css?v=2">
   <script defer src="portfolio.js"></script>
 </head>
 <body id="top">
@@ -31,21 +31,21 @@
       <div class="intro">
         <p class="hero-label">Портфолио веб-дизайна</p>
         <h1 id="title"><span>С первого</span> <span>взгляда.</span></h1>
-        <p class="intro-text">Три самостоятельных сайта для вымышленных брендов. У каждого свой стиль и свой сценарий для посетителя.</p>
+        <p class="intro-text">Шесть самостоятельных сайтов для вымышленных брендов. У каждого свой стиль и свой сценарий для посетителя.</p>
         <a class="primary" href="#works">Смотреть работы <span class="arrow down" aria-hidden="true"></span></a>
       </div>
-      <div class="cover-gallery" aria-label="Демосайты">
-        <a class="cover cover--food" href="tihosol/index.html" data-project="tihosol">
-          <img src="tihosol/assets/cover.webp" alt="" width="960" height="610" fetchpriority="high">
-          <span>Тихосоль</span>
+      <div class="cover-gallery" aria-label="Новые демосайты">
+        <a class="cover cover--light" href="lumosloy/index.html" data-project="lumosloy">
+          <img src="lumosloy/assets/cover.webp" alt="" width="860" height="918" fetchpriority="high">
+          <span>Люмослой</span>
         </a>
-        <a class="cover cover--movement" href="mezhdutakt/index.html" data-project="mezhdutakt">
-          <img src="mezhdutakt/assets/cover.webp" alt="" width="1080" height="720" fetchpriority="high">
-          <span>Междутакт</span>
+        <a class="cover cover--exhibit" href="nulevaya/index.html" data-project="nulevaya">
+          <img src="nulevaya/assets/cover.webp" alt="" width="1000" height="625" fetchpriority="high">
+          <span>Нулевая звезда</span>
         </a>
-        <a class="cover cover--architecture" href="sloevi/index.html" data-project="sloevi">
-          <img src="sloevi/assets/cover.webp" alt="" width="1120" height="747" fetchpriority="high">
-          <span>Слоеви</span>
+        <a class="cover cover--tech" href="konturum/index.html" data-project="konturum">
+          <img src="konturum/assets/cover.webp" alt="" width="1040" height="693" fetchpriority="high">
+          <span>Контурум</span>
         </a>
       </div>
     </section>
@@ -54,6 +54,45 @@
       <div class="container">
         <h2 id="works-title">Открыть и попробовать</h2>
         <div class="project-list">
+          <article data-reveal class="project project--light">
+            <a class="project-link" href="lumosloy/index.html">
+              <div class="project-media">
+                <img src="assets/lumosloy-screen.webp" width="1152" height="720" alt="Первый экран сайта световой студии «Люмослой»" loading="lazy" decoding="async">
+              </div>
+              <div class="project-copy">
+                <p>Предметный свет · флагман</p>
+                <h3>Люмослой</h3>
+                <p>Настройте яркость и температуру лампы «Петля» и посмотрите, как меняется свет в сцене.</p>
+                <span class="project-action">Открыть сайт <span class="arrow diagonal" aria-hidden="true"></span></span>
+              </div>
+            </a>
+          </article>
+          <article data-reveal class="project project--exhibit">
+            <a class="project-link" href="nulevaya/index.html">
+              <div class="project-media">
+                <img src="assets/nulevaya-screen.webp" width="1152" height="720" alt="Первый экран демосайта выставки «Нулевая звезда»" loading="lazy" decoding="async">
+              </div>
+              <div class="project-copy">
+                <p>Выставка</p>
+                <h3>Нулевая звезда</h3>
+                <p>Загляните в залы световой выставки и смените сцену в интерактивном превью.</p>
+                <span class="project-action">Открыть выставку <span class="arrow diagonal" aria-hidden="true"></span></span>
+              </div>
+            </a>
+          </article>
+          <article data-reveal class="project project--tech">
+            <a class="project-link" href="konturum/index.html">
+              <div class="project-media">
+                <img src="assets/konturum-screen.webp" width="1152" height="720" alt="Первый экран демолендинга «Контурум»" loading="lazy" decoding="async">
+              </div>
+              <div class="project-copy">
+                <p>Инструмент для дизайн-команд</p>
+                <h3>Контурум</h3>
+                <p>Переключите режим объёмной схемы и посмотрите, как меняются связи и показанные данные.</p>
+                <span class="project-action">Открыть сайт <span class="arrow diagonal" aria-hidden="true"></span></span>
+              </div>
+            </a>
+          </article>
           <article data-reveal class="project project--food">
             <a class="project-link" href="tihosol/index.html">
               <div class="project-media">

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0b0d0e">
+  <meta name="description" content="Нулевая звезда — вымышленная выставка световых инсталляций. Два зала и интерактивный просмотр экспозиции.">
+  <title>Нулевая звезда · Световая выставка</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="exhibition.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">К содержанию</a>
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="back" href="../index.html#works"><span aria-hidden="true">←</span> К портфолио</a>
+      <a href="#main" class="brand" aria-label="Нулевая звезда, к началу страницы"><span class="emblem" aria-hidden="true"></span> Нулевая звезда</a>
+      <a class="header-link" href="#exhibition">Залы <span aria-hidden="true">↘</span></a>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-visual" aria-hidden="true">
+        <img src="assets/threshold.webp" alt="" width="1536" height="1024" fetchpriority="high">
+      </div>
+      <div class="wrap hero-content">
+        <p class="eyebrow hero-label"><span class="signal" aria-hidden="true"></span> Световая выставка</p>
+        <h1 id="hero-title"><span>Нулевая</span> <span>звезда</span></h1>
+        <p class="hero-description">Мы собираем свет в кольцо, а затем разбиваем его на лучи. Посмотрите, как он меняет два тёмных зала.</p>
+        <a href="#exhibition" class="hero-action">Смотреть экспозицию <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="wrap hero-foot"><span>Два зала световых инсталляций</span><span>Вымышленная выставка</span></div>
+    </section>
+
+    <section class="exhibition" id="exhibition" aria-labelledby="exhibition-title">
+      <div class="wrap">
+        <header class="exhibition-intro reveal">
+          <div><p class="eyebrow"><span class="signal" aria-hidden="true"></span> Экспозиция</p><h2 id="exhibition-title">Два зала</h2></div>
+          <p>Сначала замкнутый контур, затем свет между стальными плитами. Переходите между залами и рассматривайте детали.</p>
+        </header>
+
+        <div class="scene-controls" aria-label="Залы выставки" role="group" hidden>
+          <button type="button" data-select="0" aria-pressed="true" aria-controls="scene-threshold"><span>01</span> Порог</button>
+          <button type="button" data-select="1" aria-pressed="false" aria-controls="scene-afterglow"><span>02</span> Послесвечение</button>
+          <button class="next-scene" type="button" title="Следующий зал" aria-label="Следующий зал">→</button>
+        </div>
+        <p class="sr-only" role="status" id="scene-status"></p>
+
+        <div class="scene-stack reveal">
+          <article class="scene" id="scene-threshold" aria-labelledby="threshold-title">
+            <figure class="scene-image"><img src="assets/threshold.webp" width="1536" height="1024" alt="Белое световое кольцо висит над графитовым полом и отражается в нём" decoding="async"></figure>
+            <div class="scene-info">
+              <p class="scene-number" aria-label="Зал один из двух">01 <span>/ 02</span></p>
+              <h3 id="threshold-title">Порог</h3>
+              <p>Подвешиваем световое кольцо над отражающим полом. Пройдите вдоль стены и посмотрите, как отражение меняется с углом.</p>
+            </div>
+          </article>
+          <article class="scene" id="scene-afterglow" aria-labelledby="afterglow-title">
+            <figure class="scene-image"><img src="assets/afterglow.webp" width="1536" height="1024" alt="Белые лучи проходят сквозь щели между высокими тёмными металлическими плитами" decoding="async" loading="lazy"></figure>
+            <div class="scene-info">
+              <p class="scene-number" aria-label="Зал два из двух">02 <span>/ 02</span></p>
+              <h3 id="afterglow-title">Послесвечение</h3>
+              <p>Размещаем стальные плиты так, чтобы свет проходил между кромками. Остановитесь сбоку: оттуда хорошо видны границы лучей.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit" aria-labelledby="visit-title">
+      <div class="wrap visit-layout reveal">
+        <div><p class="eyebrow"><span class="signal" aria-hidden="true"></span> Посещение</p><h2 id="visit-title">В своём темпе</h2></div>
+        <div class="visit-copy"><p>В первом зале дайте глазам привыкнуть к темноте. На оба зала стоит заложить около получаса. Можно задержаться у любой инсталляции и вернуться к первому кадру.</p><a class="back-to-scenes" href="#exhibition">Вернуться к залам <span aria-hidden="true">↑</span></a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div><p class="footer-brand"><span class="emblem" aria-hidden="true"></span> Нулевая звезда</p><p>Вымышленная выставка</p></div>
+      <div class="contacts"><p>Демонстрационные контакты</p><p><span>+7 (000) 000-04-04</span> <span>visit@nulevaya.example</span></p></div>
+      <a class="back" href="../index.html#works"><span aria-hidden="true">←</span> К портфолио</a>
+    </div>
+  </footer>
+</body>
+</html>

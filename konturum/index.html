@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#140f12">
+  <meta name="description" content="Контурум — вымышленный инструмент дизайн-команд. Интерактивная схема пути, развилок и зависимостей.">
+  <link rel="icon" href="assets/mark.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
+  <title>Контурум — интерактивные схемы решений</title>
+</head>
+<body>
+  <a class="skip" href="#main">Перейти к содержимому</a>
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="return" href="../index.html#works"><span aria-hidden="true">↖</span> К портфолио</a>
+      <a class="brand" href="#main" aria-label="Контурум, начало страницы"><i aria-hidden="true"></i>Контурум</a>
+      <a class="header-link" href="#demo">Демо <span aria-hidden="true">↘</span></a>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="hero-type">Инструмент для дизайн-команд</p>
+          <h1 id="hero-title">Свяжите <span>решения.</span></h1>
+          <p>Мы сделали Контурум, чтобы команда могла рассмотреть пользовательский путь, сравнить развилки и понять, от чего зависит каждое решение.</p>
+          <a class="primary" href="#demo">Открыть демо <span aria-hidden="true">↘</span></a>
+        </div>
+        <figure class="optic" data-optic>
+          <div class="optic-stage">
+            <div class="optic-window">
+              <img src="assets/optic.webp" alt="Красный оптический контур из полупрозрачного стекла" width="1536" height="1024" fetchpriority="high">
+            </div>
+            <div class="reticle" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          </div>
+          <figcaption class="demo-label">Вымышленный бренд</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="demo" class="demo" aria-labelledby="demo-title" tabindex="-1">
+      <div class="wrap">
+        <div class="demo-heading">
+          <h2 id="demo-title">Три взгляда<br>на один поток.</h2>
+          <p>В демонстрации мы проектируем продуктовый сценарий.<span data-live-help hidden> Переключайте схему и выбирайте узлы, чтобы увидеть, что происходит на каждом шаге.</span><noscript> Ниже описаны путь, развилки и зависимости.</noscript></p>
+        </div>
+
+        <div class="desk">
+          <div class="desk-top">
+            <span class="workspace"><i aria-hidden="true"></i> Учебный поток</span>
+            <div class="mode-controls" data-modes hidden aria-label="Режим представления">
+              <button id="tab-path" type="button" aria-controls="path">Путь</button>
+              <button id="tab-branches" type="button" aria-controls="branches">Развилки</button>
+              <button id="tab-dependencies" type="button" aria-controls="dependencies">Зависимости</button>
+            </div>
+          </div>
+
+          <article class="mode" id="path" aria-labelledby="path-title">
+            <div class="mode-title">
+              <h3 id="path-title">От входа к проверке</h3>
+              <p>Четыре шага в порядке прохождения.</p>
+              <p class="flow-summary">Из точки входа идём к брифу, затем к макету и проверке.</p>
+            </div>
+            <div class="mode-layout">
+              <div class="graph" data-edges="entry:brief brief:layout layout:review">
+                <ol class="node-grid" aria-label="Шаги маршрута">
+                  <li style="--x:1;--y:2;--mx:1;--my:1" data-key="entry" data-note="Участник открывает сценарий и видит основную задачу."><span class="node">Вход</span></li>
+                  <li style="--x:2;--y:2;--mx:2;--my:1" data-key="brief" data-note="Мы фиксируем цель сценария и ожидаемый результат."><span class="node">Бриф</span></li>
+                  <li style="--x:3;--y:2;--mx:2;--my:2" data-key="layout" data-note="Мы собираем экран, который проводит участника через этот сценарий."><span class="node">Макет</span></li>
+                  <li style="--x:4;--y:2;--mx:3;--my:2" data-key="review" data-note="Команда проходит путь и отмечает места, где нужен новый выбор."><span class="node">Проверка</span></li>
+                </ol>
+              </div>
+              <div class="mode-data">
+                <dl><div><dt>Узлы</dt><dd>4</dd></div><div><dt>Связи</dt><dd>3</dd></div></dl>
+                <div class="inspection" data-inspection aria-live="polite">
+                  <p class="inspection-name" data-name>Вход</p>
+                  <p data-note-copy>Участник открывает сценарий и видит основную задачу.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="mode" id="branches" aria-labelledby="branches-title">
+            <div class="mode-title">
+              <h3 id="branches-title">Два пути после разбора</h3>
+              <p>Прямой маршрут и маршрут с исследованием.</p>
+              <p class="flow-summary">После разбора запроса идём к экспресс-варианту или собираем данные. Обе ветки ведут к проверке.</p>
+            </div>
+            <div class="mode-layout">
+              <div class="graph" data-edges="request:triage triage:fast triage:research fast:review research:review">
+                <ol class="node-grid" aria-label="Узлы развилки">
+                  <li style="--x:1;--y:2;--mx:1;--my:2" data-key="request" data-note="Команда получает новый запрос на изменение сценария."><span class="node">Запрос</span></li>
+                  <li style="--x:2;--y:2;--mx:2;--my:2" data-key="triage" data-note="Мы решаем, можем ли сразу проверить гипотезу или сначала нужно разобраться в задаче."><span class="node">Разбор</span></li>
+                  <li style="--x:3;--y:1;--mx:2;--my:1" data-key="fast" data-note="Если ограничения известны, команда сразу готовит вариант для проверки."><span class="node">Экспресс</span></li>
+                  <li style="--x:3;--y:3;--mx:2;--my:3" data-key="research" data-note="Если данных мало, мы уточняем контекст задачи перед проверкой."><span class="node">Сбор данных</span></li>
+                  <li style="--x:4;--y:2;--mx:3;--my:2" data-key="review" data-note="У обоих маршрутов одна точка проверки, где команда сравнивает результат с задачей."><span class="node">Проверка</span></li>
+                </ol>
+              </div>
+              <div class="mode-data">
+                <dl><div><dt>Узлы</dt><dd>5</dd></div><div><dt>Связи</dt><dd>5</dd></div><div><dt>Ветки</dt><dd>2</dd></div></dl>
+                <div class="inspection" data-inspection aria-live="polite">
+                  <p class="inspection-name" data-name>Запрос</p>
+                  <p data-note-copy>Команда получает новый запрос на изменение сценария.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="mode" id="dependencies" aria-labelledby="dependencies-title">
+            <div class="mode-title">
+              <h3 id="dependencies-title">На чём стоит решение</h3>
+              <p>Чтобы собрать прототип, нам нужны критерии и данные.</p>
+              <p class="flow-summary">Задача задаёт критерии, а критерии определяют сбор данных. Критерии и данные ведут к прототипу, затем к решению.</p>
+            </div>
+            <div class="mode-layout">
+              <div class="graph" data-edges="task:criteria criteria:prototype criteria:data data:prototype prototype:decision">
+                <ol class="node-grid" aria-label="Узлы зависимостей">
+                  <li style="--x:1;--y:2;--mx:1;--my:1" data-key="task" data-note="Команда формулирует задачу, которую должен решать сценарий."><span class="node">Задача</span></li>
+                  <li style="--x:2;--y:1;--mx:2;--my:1" data-key="criteria" data-note="Критерии помогают решить, какие данные собрать и что считать подходящим результатом."><span class="node">Критерии</span></li>
+                  <li style="--x:2;--y:3;--mx:2;--my:3" data-key="data" data-note="Наблюдения и ограничения помогают выбрать, что реализовать в прототипе."><span class="node">Данные</span></li>
+                  <li style="--x:3;--y:2;--mx:3;--my:2" data-key="prototype" data-note="Мы собираем прототип на основе критериев и данных, затем проверяем его."><span class="node">Прототип</span></li>
+                  <li style="--x:4;--y:2;--mx:3;--my:3" data-key="decision" data-note="Команда сравнивает проверенный прототип с критериями и выбирает следующий шаг."><span class="node">Решение</span></li>
+                </ol>
+              </div>
+              <div class="mode-data">
+                <dl><div><dt>Узлы</dt><dd>5</dd></div><div><dt>Связи</dt><dd>5</dd></div></dl>
+                <div class="inspection" data-inspection aria-live="polite">
+                  <p class="inspection-name" data-name>Задача</p>
+                  <p data-note-copy>Команда формулирует задачу, которую должен решать сценарий.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-inner">
+        <div>
+          <h2 id="contact-title">О Контуруме</h2>
+          <p>Мы собрали этот прототип, чтобы показать, как команда может рассматривать один сценарий с разных сторон. Демо использует учебные данные и работает прямо в браузере.</p>
+        </div>
+        <address>
+          <p>Контакты для демонстрации</p>
+          <span>hello@konturum.example</span>
+          <span>+7 (000) 000-05-05</span>
+        </address>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>Контурум · Вымышленный бренд</span>
+      <a href="../index.html#works">К портфолио <span aria-hidden="true">↖</span></a>
+    </div>
+  </footer>
+</body>
+</html>

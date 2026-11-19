@@ -128,12 +128,12 @@ h1 span { display: block; }
 .cover img { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
 .cover::before { position: absolute; z-index: -1; inset: 40% 0 0; content: ""; background: linear-gradient(transparent, #141515d9); }
 .cover span { padding: 13px 11px; font-size: clamp(.75rem, 1.3vw, 1rem); font-weight: 500; }
-.cover--food { background: #604433; }
-.cover--food img { object-position: 51% center; }
-.cover--movement { background: #65684d; }
-.cover--movement img { object-position: 53% center; }
-.cover--architecture { background: #696963; }
-.cover--architecture img { object-position: 48% center; }
+.cover--light { background: #6b4d3b; }
+.cover--light img { object-position: 51% center; }
+.cover--exhibit { background: #3e403d; }
+.cover--exhibit img { object-position: 51% center; }
+.cover--tech { background: #35234e; }
+.cover--tech img { object-position: 55% center; }
 .cover::after {
   content: "";
   position: absolute;
@@ -143,9 +143,9 @@ h1 span { display: block; }
   transform: translateY(-102%);
   pointer-events: none;
 }
-.cover--food { --cover-ink: #68492f; }
-.cover--movement { --cover-ink: #5b6840; }
-.cover--architecture { --cover-ink: #69685d; }
+.cover--light { --cover-ink: #68492f; }
+.cover--exhibit { --cover-ink: #585851; }
+.cover--tech { --cover-ink: #3d2755; }
 .cover span::after {
   content: "";
   display: block;
@@ -174,12 +174,15 @@ h2 { font: 400 clamp(2.75rem, 6.15vw, 5.6rem)/.96 var(--title); letter-spacing: 
 .project-media { display: grid; align-items: center; min-width: 0; padding: clamp(13px, 3.1vw, 44px); background: var(--mat, #c7c5b8); }
 .project-media img { display: block; width: 100%; height: auto; aspect-ratio: 8 / 5; object-fit: cover; transition: transform .44s var(--ease); }
 .project-link:hover .project-media img { transform: scale(1.025); }
+.project--light { --mat: #bda48d; }
+.project--exhibit { --mat: #a9a9a1; }
+.project--tech { --mat: #9f8fae; }
 .project--food { --mat: #bba48c; }
 .project--movement { --mat: #bac396; }
 .project--architecture { --mat: #c5cbc8; }
-.project--movement .project-link { grid-template-columns: minmax(0, .55fr) minmax(0, 1.45fr); }
-.project--movement .project-media { grid-column: 2; grid-row: 1; }
-.project--movement .project-copy { grid-column: 1; grid-row: 1; }
+:is(.project--movement, .project--exhibit) .project-link { grid-template-columns: minmax(0, .55fr) minmax(0, 1.45fr); }
+:is(.project--movement, .project--exhibit) .project-media { grid-column: 2; grid-row: 1; }
+:is(.project--movement, .project--exhibit) .project-copy { grid-column: 1; grid-row: 1; }
 .project-copy { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: clamp(22px, 4vw, 51px); }
 .project-copy h3 { margin: 7px 0 13px; font: 400 clamp(2.35rem, 4.6vw, 4.25rem)/.96 var(--title); letter-spacing: -.045em; }
 .project-copy > p { width: min(100%, 34ch); color: var(--muted); }
@@ -204,9 +207,9 @@ h2 { font: 400 clamp(2.75rem, 6.15vw, 5.6rem)/.96 var(--title); letter-spacing: 
   .intro .primary { animation-delay: .3s; }
   .cover-gallery { animation-delay: .06s; }
   .cover::after { animation: lift-cover .62s var(--ease) both; }
-  .cover--food::after { animation-delay: .16s; }
-  .cover--movement::after { animation-delay: .25s; }
-  .cover--architecture::after { animation-delay: .34s; }
+  .cover--light::after { animation-delay: .16s; }
+  .cover--exhibit::after { animation-delay: .25s; }
+  .cover--tech::after { animation-delay: .34s; }
 
   .motion-ready [data-reveal] .project-media img,
   .motion-ready [data-reveal] .project-copy,
@@ -274,8 +277,8 @@ h2 { font: 400 clamp(2.75rem, 6.15vw, 5.6rem)/.96 var(--title); letter-spacing: 
   .cover span { padding: 8px 5px; }
   .works { padding-block: 40px 49px; }
   .project-list { gap: 13px; }
-  .project-link, .project--movement .project-link { grid-template-columns: minmax(0, 1fr); }
-  .project--movement .project-media, .project--movement .project-copy { grid-column: auto; grid-row: auto; }
+  .project-link, :is(.project--movement, .project--exhibit) .project-link { grid-template-columns: minmax(0, 1fr); }
+  :is(.project--movement, .project--exhibit) .project-media, :is(.project--movement, .project--exhibit) .project-copy { grid-column: auto; grid-row: auto; }
   .project-copy { padding: 17px 15px 9px; }
   .project-copy h3 { font-size: 2.5rem; margin-bottom: 8px; }
   .project-action { margin-top: 7px; }
